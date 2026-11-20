@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="logo">
         <Link to="/" onClick={closeMenu}>
-          <img src={logo} alt="Zeecare Logo" />
+          <img src={logo} alt="Logo" />
         </Link>
       </div>
 
