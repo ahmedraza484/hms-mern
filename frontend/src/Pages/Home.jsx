@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <Hero
-        title={"Your Health, Our Priority. Expert care anytime, any where."}
+        title={"Your Health, Our Priority. Expert care anytime,any where."}
         imgUrl={HeroImg}
       />
       <Biography imgUrl={biographyImg} />

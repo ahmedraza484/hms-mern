@@ -274,3 +274,158 @@ body {
     max-width: 100%;
   }
 }
+
+.biography {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 30px auto 0;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+.biography .biography-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.biography .biography-content img {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.biography .biography-content h1 {
+  font-size: clamp(24px, 3.5vw, 46px);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.biography .biography-content h4 {
+  font-size: clamp(18px, 2.5vw, 32px);
+  line-height: 1.3;
+  margin-top: 10px;
+}
+
+.biography .biography-content p {
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+  .biography {
+    padding: 0 50px;
+    gap: 35px;
+  }
+
+  .biography .biography-content img {
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 992px) {
+  .biography {
+    padding: 0 30px;
+    gap: 25px;
+  }
+
+  .biography .biography-content img {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .biography {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 0 25px;
+    margin-top: 25px;
+  }
+
+  .biography .biography-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .biography .biography-content img {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .biography .biography-content h1 {
+    font-size: 28px;
+  }
+
+  .biography .biography-content h4 {
+    font-size: 20px;
+  }
+
+  .biography .biography-content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .biography {
+    flex-direction: column-reverse;
+    padding: 0 15px;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .biography .biography-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .biography .biography-content img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .biography .biography-content h1 {
+    font-size: 24px;
+  }
+
+  .biography .biography-content h4 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .biography .biography-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .biography {
+    padding: 0 12px;
+    gap: 15px;
+  }
+
+  .biography .biography-content h1 {
+    font-size: 21px;
+  }
+
+  .biography .biography-content h4 {
+    font-size: 17px;
+  }
+
+  .biography .biography-content p {
+    font-size: 13px;
+  }
+}

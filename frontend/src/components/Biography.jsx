@@ -1,7 +1,7 @@
 const Biography = ({ imgUrl }) => {
   return (
     <>
-      {/* <div className="biography">
+      <div className="biography">
         <div className="biography-content">
           <img src={imgUrl} alt="" />
         </div>
@@ -19,7 +19,7 @@ const Biography = ({ imgUrl }) => {
             perspiciatis expedita tenetur omnis placeat
           </p>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
