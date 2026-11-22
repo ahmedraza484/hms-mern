@@ -4,6 +4,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
 import messageRouter from "./src/routes/message.routes.js";
+import appointmentRouter from "./src/routes/appointment.routes.js";
 import { errorMiddleware } from "./src/middlewares/errorMiddleware.js";
 // import connectDB from "./src/database/dbConnection.js";
 
@@ -33,6 +34,7 @@ app.use(
 // connectDB();
 
 app.use("/api/v1/message", messageRouter);
+app.use("/api/v1/appointment", appointmentRouter);
 
 app.use(errorMiddleware);
 export default app;

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const AppointmentForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -26,10 +28,33 @@ const AppointmentForm = () => {
     "ENT",
   ];
 
-  const [doctors, setDoctors] = useState([]);
-
   const handleAppointment = async (e) => {
     e.preventDefault();
+    try {
+      const res = await axios.post(
+        "https://hms-mern-cl5u.vercel.app/api/v1/appointment/sendAppointment",
+        {
+          firstName,
+          lastName,
+          email,
+          phone,
+          nic,
+          dob,
+          gender,
+          appointmentDate,
+          address,
+        },
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+      toast.success(res.data.message)
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
 
   return (
@@ -59,7 +84,7 @@ const AppointmentForm = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
-              type="number"
+              type="text"
               placeholder="Mobile Number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -67,7 +92,7 @@ const AppointmentForm = () => {
           </div>
           <div>
             <input
-              type="number"
+              type="text"
               placeholder="NIC"
               value={nic}
               onChange={(e) => setNic(e.target.value)}
@@ -109,34 +134,6 @@ const AppointmentForm = () => {
                 );
               })}
             </select>
-
-            <select
-              value={JSON.stringify({
-                firstName: doctorFirstName,
-                lastName: doctorLastName,
-              })}
-              onChange={(e) => {
-                const { firstName, lastName } = JSON.parse(e.target.value);
-                setDoctorFirstName(firstName);
-                setDoctorLastName(lastName);
-              }}
-              disabled={!department}
-            >
-              <option value="">Select Doctor</option>
-              {doctors
-                .filter((doctor) => doctor.doctorDepartment === department)
-                .map((doctor, index) => (
-                  <option
-                    key={index}
-                    value={JSON.stringify({
-                      firstName: doctor.firstName,
-                      lastName: doctor.lastName,
-                    })}
-                  >
-                    {doctor.firstName} {doctor.lastName}
-                  </option>
-                ))}
-            </select>
           </div>
           <textarea
             rows="10"
@@ -144,7 +141,7 @@ const AppointmentForm = () => {
             onChange={(e) => setAddress(e.target.value)}
             placeholder="Address"
           />
-          
+
           <button className="btn">GET APPOINTMENT</button>
         </form>
       </section>
