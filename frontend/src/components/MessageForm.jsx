@@ -13,7 +13,7 @@ const MessageForm = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/v1/message/sendMessage",
+        "https://vercel.com/ahmedraza484/hms-mern/GEADepmnue5bU6HzSVYkgWKsfs2U/api/v1/message/sendMessage",
         { firstName, lastName, email, phone, message },
         {
           withCredentials: true,
