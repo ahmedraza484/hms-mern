@@ -14,7 +14,7 @@ dotenv.config({
 
 app.use(
   cors({
-    origin: "https://hms-mern-v3sb.vercel.app",
+    origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }),
@@ -33,12 +33,6 @@ app.use(
 // connectDB();
 
 app.use("/api/v1/message", messageRouter);
-
-app.get("/", (req, res) => {
-  return res.json({
-    message: "<h1>Hello Wolrd!</h1>",
-  });
-});
 
 app.use(errorMiddleware);
 export default app;
