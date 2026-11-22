@@ -34,12 +34,11 @@ app.use(
 
 app.use("/api/v1/message", messageRouter);
 
-app.get("/",(req,res)=>{
-  return res.send(
-    <h1>Hello Wolrd!</h1>
-  )
-})
+app.get("/", (req, res) => {
+  return res.json({
+    message: "<h1>Hello Wolrd!</h1>",
+  });
+});
 
-
-app.use(errorMiddleware)
+app.use(errorMiddleware);
 export default app;
