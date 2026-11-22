@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
+import messageRouter from "./src/routes/message.routes.js";
+import { errorMiddleware } from "./src/middlewares/errorMiddleware.js";
 // import connectDB from "./src/database/dbConnection.js";
 
 const app = express();
@@ -30,4 +32,10 @@ app.use(
 
 // connectDB();
 
+app.use("/api/v1/message", messageRouter);
+
+
+
+
+app.use(errorMiddleware)
 export default app;

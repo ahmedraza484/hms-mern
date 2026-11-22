@@ -8,6 +8,7 @@ import About from "./Pages/About";
 import Appointment from "./Pages/Appointment";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
         </Routes>
         <Footer />
+        <Toaster />
       </BrowserRouter>
     </>
   );
