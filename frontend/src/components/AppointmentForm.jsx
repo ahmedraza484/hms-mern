@@ -144,14 +144,8 @@ const AppointmentForm = () => {
             onChange={(e) => setAddress(e.target.value)}
             placeholder="Address"
           />
-          <div
-            style={{
-              gap: "10px",
-              justifyContent: "flex-end",
-              flexDirection: "row",
-            }}
-          ></div>
-          <button style={{ margin: "0 auto" }}>GET APPOINTMENT</button>
+          
+          <button className="btn">GET APPOINTMENT</button>
         </form>
       </section>
     </>

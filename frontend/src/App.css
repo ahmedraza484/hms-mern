@@ -62,7 +62,7 @@ body {
   background-color: #0d9488;
   font-weight: 700;
   border-radius: 50px;
-  padding: 10px 28px;
+  padding: 10px 40px;
   cursor: pointer;
   transition: 0.3s ease;
   border: 2px solid #0d9488;
@@ -428,16 +428,15 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  padding: 0px 80px;
-  max-width: 1200px;
+  padding: 0px 60px;
 }
 
 .department-section h2 {
   flex: 0 0 100%;
   font-size: 28px;
   font-weight: 700;
-  color: gray;
   text-align: start;
+  padding-left: 10px;
 }
 
 .department-card {
@@ -546,6 +545,8 @@ body {
   max-width: 1100px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 18px;
 }
 
@@ -621,8 +622,11 @@ body {
   }
 }
 .form-component.appointment-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
   padding: 32px 48px 48px;
-  min-height: 100vh;
 }
 
 .form-component.appointment-form h2 {
@@ -634,6 +638,8 @@ body {
 .form-component.appointment-form form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 18px;
   width: 100%;
 }
@@ -685,7 +691,6 @@ body {
   left: 16px;
   font-size: 13px;
   font-weight: 400;
-
   pointer-events: none;
 }
 
@@ -715,28 +720,6 @@ body {
   color: #22252a;
   resize: vertical;
   outline: none;
-}
-
-.form-component.appointment-form button {
-  margin-top: 8px;
-  padding: 12px 28px;
-  background-color: #0d9488;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.6px;
-  cursor: pointer;
-  transition: transform 0.1s ease;
-}
-
-.form-component.appointment-form button:hover {
-  background-color: #0f766e;
-}
-
-.form-component.appointment-form button:active {
-  transform: scale(0.99);
 }
 
 @media (max-width: 768px) {
@@ -841,5 +824,291 @@ footer .content div:last-child div svg {
   footer .content div:nth-child(3) ul li {
     display: flex;
     flex-direction: column;
+  }
+}
+.login-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+.login-section form {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 10px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.login-section h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #3f4247;
+  text-align: center;
+}
+
+.login-section > form > p {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  color: #7a7e85;
+  text-align: center;
+}
+
+.login-section input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  background-color: #ffffff;
+  border: 1px solid #c5c7cb;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #22252a;
+  outline: none;
+}
+
+.login-section input:focus {
+  border-color: #0d9488;
+}
+
+.login-section .login-btn {
+  width: 100%;
+  height: 46px;
+  margin-top: 6px;
+  background-color: #0d9488;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.login-section form > p:last-of-type {
+  display: inline;
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  color: #6b6f76;
+  text-align: center;
+}
+.login-section .register-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.login-section .register-row p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.login-section .register-row a {
+  margin-left: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d9488;
+  text-decoration: none;
+}
+
+.login-section .register-row a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .login-section {
+    padding: 20px 14px;
+  }
+
+  .login-section form {
+    max-width: 400px;
+    padding: 28px 24px;
+  }
+
+  .login-section h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-section {
+    padding: 16px 12px;
+    align-items: center;
+  }
+
+  .login-section form {
+    padding: 24px 18px;
+    border-radius: 8px;
+    gap: 12px;
+  }
+
+  .login-section h1 {
+    font-size: 22px;
+  }
+
+  .login-section input,
+  .login-section .login-btn {
+    height: 44px;
+    font-size: 14px;
+  }
+}
+.register-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+.register-section form {
+  width: 100%;
+  max-width: 620px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.register-section h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.register-section > form > p {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.register-section .input-group {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.register-section .input-group input,
+.register-section .input-group select {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  padding: 0 14px;
+  background-color: #ffffff;
+  border: 1px solid #c5c7cb;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+}
+
+.register-section input::placeholder {
+  color: #9da0a6;
+  font-size: 14px;
+}
+
+.register-section select {
+  cursor: pointer;
+}
+
+.register-section .register-btn {
+  width: 100%;
+  height: 46px;
+  margin-top: 6px;
+  background-color: #0d9488;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+}
+
+.register-section .register-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.register-section .register-row p {
+  margin: 0;
+  font-size: 14px;
+  color: #6b6f76;
+}
+
+.register-section .register-row a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d9488;
+  text-decoration: none;
+}
+
+.register-section .register-row a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .register-section {
+    padding: 20px 14px;
+  }
+
+  .register-section form {
+    max-width: 440px;
+    padding: 28px 22px;
+  }
+
+  .register-section h1 {
+    font-size: 25px;
+  }
+
+  .register-section .input-group {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .register-section .input-group input,
+  .register-section .input-group select {
+    flex: none;
+    width: 100%;
+    height: 46px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-section {
+    padding: 16px 12px;
+  }
+
+  .register-section form {
+    padding: 24px 18px;
+    border-radius: 8px;
+    gap: 12px;
+  }
+
+  .register-section h1 {
+    font-size: 22px;
+  }
+
+  .register-section .input-group input,
+  .register-section .input-group select,
+  .register-section .register-btn {
+    height: 44px;
+    font-size: 14px;
   }
 }

@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Biography from "../components/Biography";
+import biographyImg from "../assets/biography.png";
 
 const About = () => {
   return (
-    <div>About</div>
-  )
-}
+    <>
+      <Biography imgUrl={biographyImg} />
+    </>
+  );
+};
 
-export default About
+export default About;

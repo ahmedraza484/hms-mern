@@ -32,9 +32,9 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="login-item">
-          <button type="button" className="btn" onClick={closeMenu}>
-            LOGIN
-          </button>
+          <Link to="/login" className="btn" onClick={closeMenu}>
+            Login
+          </Link>
         </li>
       </ul>
 
