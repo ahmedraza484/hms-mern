@@ -9,9 +9,6 @@ const Hero = ({ title, imgUrl }) => {
           Compassionate telehealth and clinic services, powered by advanced
           technology
         </p>
-        <Link to="/appointment" className="appointment-btn">
-          <button>Book Appointment</button>
-        </Link>
       </div>
 
       <div className="hero-image">
