@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { IoMenu, IoClose } from "react-icons/io5";
+import { IoMenu } from "react-icons/io5";
 import { useContext, useState } from "react";
 import UserContext from "../context/UserContext";
 import axios from "axios";
@@ -12,18 +12,22 @@ const Navbar = () => {
 
   const { isAuthenticated, setIsAuthenticated } = useContext(UserContext);
 
-  const navigateTo = useNavigate("");
+  const navigateTo = useNavigate();
 
   const goToLogin = () => {
     navigateTo("/login");
   };
   const handleLogout = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/v1/user/logout", {
-        withCredentials: true,
-      });
+      const res = await axios.get(
+        "https://hms-mern-cl5u.vercel.app/api/v1/user/logout",
+        {
+          withCredentials: true,
+        },
+      );
       toast.success(res.data.message);
       setIsAuthenticated(false);
+      navigateTo("/login");
     } catch (error) {
       toast.error(error.response.data.message);
     }
