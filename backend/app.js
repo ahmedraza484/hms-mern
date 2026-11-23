@@ -6,7 +6,7 @@ import fileUpload from "express-fileupload";
 import messageRouter from "./src/routes/message.routes.js";
 import appointmentRouter from "./src/routes/appointment.routes.js";
 import { errorMiddleware } from "./src/middlewares/errorMiddleware.js";
-// import connectDB from "./src/database/dbConnection.js";
+import userRouter from "./src/routes/user.routes.js";
 
 const app = express();
 dotenv.config({
@@ -31,10 +31,9 @@ app.use(
   }),
 );
 
-// connectDB();
-
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/appointment", appointmentRouter);
+app.use("/api/v1/user", userRouter);
 
 app.use(errorMiddleware);
 export default app;

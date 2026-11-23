@@ -1,11 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { IoMenu, IoClose } from "react-icons/io5";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserContext from "../context/UserContext";
+import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const closeMenu = () => setMenu(false);
+
+  const { isAuthenticated, setIsAuthenticated } = useContext(UserContext);
+
+  const navigateTo = useNavigate("");
+
+  const goToLogin = () => {
+    navigateTo("/login");
+  };
+  const handleLogout = async () => {
+    try {
+      const res = await axios.get("http://localhost:8000/api/v1/user/logout", {
+        withCredentials: true,
+      });
+      toast.success(res.data.message);
+      setIsAuthenticated(false);
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -32,9 +54,15 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="login-item">
-          <Link to="/login" className="btn" onClick={closeMenu}>
-            Login
-          </Link>
+          {isAuthenticated ? (
+            <button className="btn" onClick={handleLogout}>
+              Logout
+            </button>
+          ) : (
+            <button className="btn" onClick={goToLogin}>
+              Login
+            </button>
+          )}
         </li>
       </ul>
 
