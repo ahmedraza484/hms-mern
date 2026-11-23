@@ -14,9 +14,6 @@ const Navbar = () => {
 
   const navigateTo = useNavigate();
 
-  const goToLogin = () => {
-    navigateTo("/login");
-  };
   const handleLogout = async () => {
     try {
       const res = await axios.get(
@@ -32,7 +29,9 @@ const Navbar = () => {
       toast.error(error.response.data.message);
     }
   };
-
+  const goToLogin = () => {
+    navigateTo("/login");
+  };
   return (
     <nav className="navbar">
       <div className="logo">
